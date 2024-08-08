@@ -4,14 +4,14 @@ import { Client, Databases } from "appwrite";
 export const customerData = async () => {
   try {
     const client = new Client()
-      .setEndpoint("https://cloud.appwrite.io/v1")
-      .setProject("66aee777000efd6f8fdc");
+      .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
+      .setProject(process.env.NEXT_PUBLIC_PROJECT_ID);
     const databases = new Databases(client);
 
     // Fetch documents from the collection
     const response = await databases.listDocuments(
-      "66af3ae30031f6a96a00",
-      "66af3af70036453c1d8f"
+      process.env.NEXT_PUBLIC_DATABASE_ID,
+      process.env.NEXT_PUBLIC_CUSTOMERS_TABLE_ID
     );
 
     // Extract the data from the response and return it
