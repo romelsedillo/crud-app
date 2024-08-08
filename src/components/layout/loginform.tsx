@@ -14,21 +14,20 @@ const LoginForm = () => {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const checkUserSession = async () => {
+    setLoading(true);
+    try {
+      const user = await account.get();
+      setLoggedInUser(user);
+      router.push("/tables");
+    } catch (error) {
+      console.log("No active session found.");
+    }
+    setLoading(false);
+  };
   useEffect(() => {
-    const checkUserSession = async () => {
-      setLoading(true);
-      try {
-        const user = await account.get();
-        setLoggedInUser(user);
-        router.push("/tables");
-      } catch (error) {
-        console.log("No active session found");
-      } finally {
-        setLoading(false);
-      }
-    };
     checkUserSession();
-  }, [router]);
+  }, []);
 
   const login = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,11 +46,10 @@ const LoginForm = () => {
     }
   };
 
-  console.log(loggedInUser);
   return (
     <form
       onSubmit={login}
-      className="max-w-xs mx-auto flex flex-col gap-2"
+      className=" bg-background text-foreground max-w-xs mx-auto flex flex-col gap-2"
       autoComplete="on"
     >
       <Input
@@ -69,7 +67,7 @@ const LoginForm = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button className="px-4 py-2 rounded" type="submit">
+      <Button className="px-4 py-2 rounded font-thin" type="submit">
         Login
       </Button>
     </form>

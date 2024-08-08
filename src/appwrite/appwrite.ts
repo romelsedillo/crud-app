@@ -3,8 +3,8 @@ import { Client, Account } from "appwrite";
 export const client = new Client();
 
 client
-  .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
-  .setProject(process.env.NEXT_PUBLIC_PROJECT_ID); // Replace with your project ID
+  .setEndpoint("https://cloud.appwrite.io/v1")
+  .setProject("66aee777000efd6f8fdc"); // Replace with your project ID
 
 export const account = new Account(client);
 export { ID } from "appwrite";
@@ -15,3 +15,6 @@ export { ID } from "appwrite";
 // client
 //     .setEndpoint('https://cloud.appwrite.io/v1')
 //     .setProject('66aee777000efd6f8fdc');
+
+// GOOGLE_Client_ID = 747078104557-70sqc018tmr62qngi3mttq8a57dp7f29.apps.googleusercontent.com
+// GOOGLE_Client_secret = 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

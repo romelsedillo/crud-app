@@ -71,7 +71,7 @@ export default function RegisterForm() {
         />
       </div>
       <div className="flex flex-col items-start w-full">
-        <Button type="submit" className="w-full py-1 rounded">
+        <Button type="submit" className="w-full py-1 rounded font-thin">
           Register
         </Button>
       </div>

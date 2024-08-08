@@ -55,11 +55,11 @@ export default function RegisterPage() {
           <hr className="border flex-grow" />
         </div>
         <div className="max-w-xs flex items-center mx-auto gap-6">
-          <Button className="w-full gap-2">
+          <Button className="w-full gap-2 font-thin">
             <FcGoogle />
             Google
           </Button>
-          <Button className="w-full gap-2">
+          <Button className="w-full gap-2 font-thin">
             <FaGithub />
             GitHub
           </Button>

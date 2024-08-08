@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,17 +23,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <main className="max-w-7xl h-screen">
-              <Toaster/>
-              {children}
-            </main>
-          </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="max-w-7xl h-screen">
+            <Toaster />
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
