@@ -20,7 +20,7 @@ export const customerData = async () => {
       name: doc.name,
       email: doc.email,
       address: doc.address,
-      // Add more fields as needed
+      
     }));
     data.reverse();
     return data;
